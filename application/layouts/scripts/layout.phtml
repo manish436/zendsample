@@ -1,0 +1,36 @@
+<?php
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('My Company Portal');
+echo $this->doctype();
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <?php
+        echo $this->headMeta(),
+        $this->headTitle(),
+        $this->headLink()->appendStylesheet(
+                '/css/php_hol.css');
+        ?>
+    </head>
+    <body>
+        <h1>My Company Portal</h1>
+        <div id="menu">
+            <ul>
+                <li><a href="<?php
+                    echo $this->url(
+                            array('controller' => 'index'), 'default', true)
+                    ?>"
+                       >Home</a></li>
+                <li><a href="<?php
+                       echo $this->url(
+                               array('controller' => 'employee'), 'default', true)
+                       ?>"
+                       >Employee Administration</a></li>
+            </ul>
+        </div>
+        <div id="content">
+<?php echo $this->layout()->content; ?>
+        </div>
+    </body>
+</html>
