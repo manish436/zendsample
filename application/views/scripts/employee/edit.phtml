@@ -1,0 +1,13 @@
+<div id="formdiv">
+    <h1>Edit Employee</h1>
+    <p>Use this form to manage your employees.</p>
+
+    <?php
+    $this->form->setAction($this->url());
+    // Overwrite the default value used in 
+    // the New Employee form for the submit button
+    $this->form->getElement("submit")->setLabel("Update Employee");
+
+    echo $this->form;
+    ?>
+</div>
